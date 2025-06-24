@@ -27,6 +27,8 @@ int main()
 
 	int choice;
 
+	cout << "안녕하세요" << endl;
+
 	while (state != QUIT)
 	{
 		switch (state)
