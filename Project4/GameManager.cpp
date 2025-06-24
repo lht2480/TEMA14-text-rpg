@@ -80,6 +80,7 @@ bool GameManager::battle(Character& player)
                     else
                     {
                         cout << "사용할 수 있는 아이템이 없습니다." << endl;
+                        break;
                     }
                     break;
  

@@ -24,10 +24,8 @@ int main()
 	GAME_STATE state = START;
 	Character player(name);
 	GameManager manager;
-
 	int choice;
 
-	cout << "안녕하세요" << endl;
 
 	while (state != QUIT)
 	{
@@ -48,6 +46,7 @@ int main()
 		case PLAY:
 			if (player.level >= 10)
 			{
+				system("cls");
 				cout << "이미 만렙이라 게임이 끝납니다...\n";
 				system("pause");
 				state = END;
@@ -96,16 +95,25 @@ int main()
 			}
 
 		case FIGHT:
+			system("cls");
 			cout << "몬스터와의 전투가 시작되었습니다.\n";
 			// 싸우는 함수
 
 			if (manager.battle(player))
 			{
 				state = PLAY;
+
+				cout << "\n";
+				system("pause");
+				break;
 			}
 			else
 			{
 				state = END;
+
+				cout << "\n";
+				system("pause");
+				break;
 			}
 
 		case END:
