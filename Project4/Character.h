@@ -3,6 +3,7 @@
 #include <vector>
 #include <memory>
 #include <iostream>
+#include <sstream>
 #include "Item.h"
 
 using namespace std;
