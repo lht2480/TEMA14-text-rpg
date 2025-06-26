@@ -19,6 +19,15 @@ enum GAME_STATE
     QUIT
 };
 
+bool isBlank(const string& s)
+{
+    for (char c : s)
+    {
+        if (c != ' ' && c != '\t') return false;
+    }
+    return true;
+}
+
 int main()
 {
     string name;
@@ -35,8 +44,14 @@ int main()
         case START:
             logger.log("게임이 시작되었습니다!");
             logger.log("캐릭터의 이름을 입력해주세요:");
-            cout << "이름: ";
-            getline(cin, name);
+            do {
+                cout << "캐릭터 이름을 입력하세요: ";
+                getline(cin, name);
+                if (isBlank(name))
+                {
+                    cout << "이름은 공백일 수 없습니다. 다시 입력하세요.\n";
+                }
+            } while (isBlank(name));
             player = Character(name);
 
             logger.log("당신의 이름은: " + name + "입니다.");
