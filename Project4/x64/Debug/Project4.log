@@ -1,3 +1,2 @@
 ﻿  Main.cpp
-H:\c\Project4\Project4\Main.cpp(23,12): warning C4244: '인수': 'time_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  Project4.vcxproj -> H:\c\Project4\x64\Debug\Project4.exe
+  Project4.vcxproj -> G:\GitClone\TEMA14-text-rpg\x64\Debug\Project4.exe
