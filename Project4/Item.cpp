@@ -13,7 +13,7 @@ void HealthPotion::use(Character* character)
         character->health = character->maxHealth;
 
     stringstream ss;
-    ss << character->name << "ÀÌ(°¡) Ã¼·Â Æ÷¼ÇÀ» »ç¿ëÇß½À´Ï´Ù! Ã¼·Â +50";
+    ss << character->name << "ì´(ê°€) ì²´ë ¥ í¬ì…˜ì„ ì‚¬ìš©í–ˆìŠµë‹ˆë‹¤! ì²´ë ¥ +50";
     logger.log(ss.str());
 }
 
@@ -22,6 +22,6 @@ void AttackBoost::use(Character* character)
     character->attack += 10;
 
     stringstream ss;
-    ss << character->name << "ÀÌ(°¡) °ø°Ý·Â Áõ°¡ Æ÷¼ÇÀ» »ç¿ëÇß½À´Ï´Ù! °ø°Ý·Â +10";
+    ss << character->name << "ì´(ê°€) ê³µê²©ë ¥ ì¦ê°€ í¬ì…˜ì„ ì‚¬ìš©í–ˆìŠµë‹ˆë‹¤! ê³µê²©ë ¥ +10";
     logger.log(ss.str());
 }

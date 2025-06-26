@@ -24,7 +24,7 @@ void GameLog::saveToFile(const string& filename)
 
 void GameLog::showLogs()
 {
-    cout << "\n===== ·Î±× ³»¿ë È®ÀÎ =====\n";
+    cout << "\n===== ë¡œê·¸ ë‚´ìš© í™•ì¸ =====\n";
     for (const auto& msg : logs)
     {
         cout << msg << endl;

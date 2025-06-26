@@ -26,7 +26,7 @@ unique_ptr<Monster> GameManager::generateMonster(int level)
 
 void GameManager::displayInventory(Character& player)
 {
-    logger.log("[ÀÎº¥Åä¸® ¸ñ·Ï]");
+    logger.log("[ì¸ë²¤í† ë¦¬ ëª©ë¡]");
     for (size_t i = 0; i < player.inventory.size(); ++i)
     {
         stringstream ss;
@@ -40,8 +40,8 @@ bool GameManager::battle(Character& player)
     unique_ptr<Monster> monster = generateMonster(player.level);
     {
         stringstream ss;
-        ss << "\n¸ó½ºÅÍ " << monster->getName() << " µîÀå! Ã¼·Â: " << monster->getHealth()
-            << ", °ø°İ·Â: " << monster->getAttack();
+        ss << "\nëª¬ìŠ¤í„° " << monster->getName() << " ë“±ì¥! ì²´ë ¥: " << monster->getHealth()
+            << ", ê³µê²©ë ¥: " << monster->getAttack();
         logger.log(ss.str());
     }
 
@@ -50,15 +50,15 @@ bool GameManager::battle(Character& player)
 
 
         stringstream status;
-        status << "\n--- ÇöÀç »óÅÂ ---\n"
-            << "| ³» »óÅÂ | Ã¼·Â: " << player.health << " | °ø°İ·Â: " << player.attack << "\n"
-            << "| ¸ó½ºÅÍ »óÅÂ | Ã¼·Â: " << monster->getHealth() << " | °ø°İ·Â: " << monster->getAttack();
+        status << "\n--- í˜„ì¬ ìƒíƒœ ---\n"
+            << "| ë‚´ ìƒíƒœ | ì²´ë ¥: " << player.health << " | ê³µê²©ë ¥: " << player.attack << "\n"
+            << "| ëª¬ìŠ¤í„° ìƒíƒœ | ì²´ë ¥: " << monster->getHealth() << " | ê³µê²©ë ¥: " << monster->getAttack();
         logger.log(status.str());
 
         while (true)
         {
 
-            logger.log("\n[ÅÏ ¼±ÅÃ] ¹«¾ùÀ» ÇÏ½Ã°Ú½À´Ï±î?\n1. °ø°İ\n2. ¾ÆÀÌÅÛ »ç¿ë");
+            logger.log("\n[í„´ ì„ íƒ] ë¬´ì—‡ì„ í•˜ì‹œê² ìŠµë‹ˆê¹Œ?\n1. ê³µê²©\n2. ì•„ì´í…œ ì‚¬ìš©");
             int choice;
             cin >> choice;
 
@@ -68,8 +68,8 @@ bool GameManager::battle(Character& player)
             {
                 monster->takeDamage(player.attack);
                 stringstream ss;
-                ss << player.name << "°¡ " << monster->getName()
-                    << "À»(¸¦) °ø°İÇÕ´Ï´Ù! ³²Àº Ã¼·Â: " << max(0, monster->getHealth());
+                ss << player.name << "ê°€ " << monster->getName()
+                    << "ì„(ë¥¼) ê³µê²©í•©ë‹ˆë‹¤! ë‚¨ì€ ì²´ë ¥: " << max(0, monster->getHealth());
                 logger.log(ss.str());
                 break;
             }
@@ -82,12 +82,12 @@ bool GameManager::battle(Character& player)
                     while (true)
                     {
                         displayInventory(player);
-                        logger.log("»ç¿ëÇÒ ¾ÆÀÌÅÛ ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä (0: Ãë¼Ò): ");
+                        logger.log("ì‚¬ìš©í•  ì•„ì´í…œ ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš” (0: ì·¨ì†Œ): ");
                         cin >> itemIdx;
 
                         if (itemIdx == 0)
                         {
-                            logger.log("¾ÆÀÌÅÛ »ç¿ëÀ» Ãë¼ÒÇß½À´Ï´Ù.");
+                            logger.log("ì•„ì´í…œ ì‚¬ìš©ì„ ì·¨ì†Œí–ˆìŠµë‹ˆë‹¤.");
                             break;
                         }
                         else if (itemIdx >= 1 && itemIdx <= player.inventory.size())
@@ -97,19 +97,19 @@ bool GameManager::battle(Character& player)
                         }
                         else
                         {
-                            logger.log("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù. ´Ù½Ã ¼±ÅÃÇØÁÖ¼¼¿ä.");
+                            logger.log("ì˜ëª»ëœ ì…ë ¥ì…ë‹ˆë‹¤. ë‹¤ì‹œ ì„ íƒí•´ì£¼ì„¸ìš”.");
                         }
                     }
                 }
                 else
                 {
-                    logger.log("»ç¿ëÇÒ ¼ö ÀÖ´Â ¾ÆÀÌÅÛÀÌ ¾ø½À´Ï´Ù.");
+                    logger.log("ì‚¬ìš©í•  ìˆ˜ ìˆëŠ” ì•„ì´í…œì´ ì—†ìŠµë‹ˆë‹¤.");
                 }
                 break;
             }
 
             default:
-                logger.log("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù. ´Ù½Ã ¼±ÅÃÇØÁÖ¼¼¿ä.");
+                logger.log("ì˜ëª»ëœ ì…ë ¥ì…ë‹ˆë‹¤. ë‹¤ì‹œ ì„ íƒí•´ì£¼ì„¸ìš”.");
                 continue;
             }
             break;
@@ -119,14 +119,14 @@ bool GameManager::battle(Character& player)
 
         player.health -= monster->getAttack();
         stringstream ss;
-        ss << monster->getName() << "ÀÌ(°¡) " << player.name
-            << "À»(¸¦) °ø°İÇÕ´Ï´Ù! ³²Àº Ã¼·Â: " << max(0, player.health);
+        ss << monster->getName() << "ì´(ê°€) " << player.name
+            << "ì„(ë¥¼) ê³µê²©í•©ë‹ˆë‹¤! ë‚¨ì€ ì²´ë ¥: " << max(0, player.health);
         logger.log(ss.str());
     }
 
     if (player.health <= 0)
     {
-        string msg = player.name + "°¡ »ç¸ÁÇß½À´Ï´Ù. °ÔÀÓ ¿À¹ö!";
+        string msg = player.name + "ê°€ ì‚¬ë§í–ˆìŠµë‹ˆë‹¤. ê²Œì„ ì˜¤ë²„!";
         logger.log(msg);
         return false;
     }
@@ -138,7 +138,7 @@ bool GameManager::battle(Character& player)
         player.gold += gold;
 
         stringstream ss;
-        ss << player.name << "°¡ ÀüÅõ¿¡¼­ ½Â¸®Çß½À´Ï´Ù! °æÇèÄ¡: " << exp << " °ñµå: " << gold;
+        ss << player.name << "ê°€ ì „íˆ¬ì—ì„œ ìŠ¹ë¦¬í–ˆìŠµë‹ˆë‹¤! ê²½í—˜ì¹˜: " << exp << " ê³¨ë“œ: " << gold;
         logger.log(ss.str());
 
         if (rand() % 100 < 30)
@@ -146,12 +146,12 @@ bool GameManager::battle(Character& player)
             if (rand() % 2 == 0)
             {
                 player.inventory.push_back(make_unique<HealthPotion>());
-                logger.log("[È¹µæ ¾ÆÀÌÅÛ] Ã¼·Â Æ÷¼Ç");
+                logger.log("[íšë“ ì•„ì´í…œ] ì²´ë ¥ í¬ì…˜");
             }
             else
             {
                 player.inventory.push_back(make_unique<AttackBoost>());
-                logger.log("[È¹µæ ¾ÆÀÌÅÛ] °ø°İ·Â Æ÷¼Ç");
+                logger.log("[íšë“ ì•„ì´í…œ] ê³µê²©ë ¥ í¬ì…˜");
             }
         }
 
