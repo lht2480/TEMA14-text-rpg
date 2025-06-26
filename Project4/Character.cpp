@@ -10,7 +10,10 @@ using namespace std;
 
 extern GameLog logger;
 
-Character::Character(string n) : name(n) {}
+Character::Character(string n) : name(n) 
+{
+    cout << "캐릭터 생성자가 호출되었습니다" << endl;
+}
 
 void Character::showStatus()
 {

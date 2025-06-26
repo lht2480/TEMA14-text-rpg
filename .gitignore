@@ -120,3 +120,12 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.toptal.com/developers/gitignore/api/windows,unrealengine
+
+# 비쥬얼스튜디오 파일 무시
+*.ilk
+*.log
+*.tlog
+*.idb
+*.pdb
+*.recipe
+*.lastbuildstate
