@@ -1,10 +1,2 @@
-﻿  Character.cpp
-  Character.h
-  GameManager.cpp
-  Item.cpp
-  Main.cpp
-C:\Users\rhkrt\Documents\GitHub\TEMA14-text-rpg\Project4\Main.cpp(23,12): warning C4244: '인수': 'time_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  Monster.cpp
-  코드를 생성하고 있습니다...
-x64\Debug\Character.obj : warning LNK4042: 개체가 두 번 이상 지정되었습니다. 나머지는 무시됩니다.
-  Project4.vcxproj -> C:\Users\rhkrt\Documents\GitHub\TEMA14-text-rpg\x64\Debug\Project4.exe
+﻿  Monster.cpp
+C:\Users\a\Documents\GitHub\TEMA14-text-rpg\Project4\Monster.cpp(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.

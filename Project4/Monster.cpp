@@ -12,6 +12,7 @@ bool Monster::isDead()
 
 Goblin::Goblin(int level)
 {
+    cout << "ê³ ë¸”ë¦° ìƒì„± ì™„ë£Œ " << endl;
     name = "Goblin";
     health = 20 + level * 2;
     attack = 5 + level;
@@ -25,7 +26,7 @@ void Goblin::takeDamage(int damage)
     if (health < 0) health = 0;
 
     stringstream ss;
-    ss << name << "ÀÌ(°¡) " << damage << " ÇÇÇØ¸¦ ÀÔ¾ú½À´Ï´Ù! ÇöÀç Ã¼·Â: " << health;
+    ss << name << "ì´(ê°€) " << damage << " í”¼í•´ë¥¼ ìž…ì—ˆìŠµë‹ˆë‹¤! í˜„ìž¬ ì²´ë ¥: " << health;
     logger.log(ss.str());
 }
 
@@ -44,7 +45,7 @@ void Orc::takeDamage(int damage)
     if (health < 0) health = 0;
 
     stringstream ss;
-    ss << name << "ÀÌ(°¡) " << damage << " ÇÇÇØ¸¦ ÀÔ¾ú½À´Ï´Ù! ÇöÀç Ã¼·Â: " << health;
+    ss << name << "ì´(ê°€) " << damage << " í”¼í•´ë¥¼ ìž…ì—ˆìŠµë‹ˆë‹¤! í˜„ìž¬ ì²´ë ¥: " << health;
     logger.log(ss.str());
 }
 
@@ -63,7 +64,7 @@ void Troll::takeDamage(int damage)
     if (health < 0) health = 0;
 
     stringstream ss;
-    ss << name << "ÀÌ(°¡) " << damage << " ÇÇÇØ¸¦ ÀÔ¾ú½À´Ï´Ù! ÇöÀç Ã¼·Â: " << health;
+    ss << name << "ì´(ê°€) " << damage << " í”¼í•´ë¥¼ ìž…ì—ˆìŠµë‹ˆë‹¤! í˜„ìž¬ ì²´ë ¥: " << health;
     logger.log(ss.str());
 }
 
@@ -82,6 +83,6 @@ void Slime::takeDamage(int damage)
     if (health < 0) health = 0;
 
     stringstream ss;
-    ss << name << "ÀÌ(°¡) " << damage << " ÇÇÇØ¸¦ ÀÔ¾ú½À´Ï´Ù! ÇöÀç Ã¼·Â: " << health;
+    ss << name << "ì´(ê°€) " << damage << " í”¼í•´ë¥¼ ìž…ì—ˆìŠµë‹ˆë‹¤! í˜„ìž¬ ì²´ë ¥: " << health;
     logger.log(ss.str());
 }
